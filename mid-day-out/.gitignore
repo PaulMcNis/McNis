@@ -2,3 +2,4 @@ bilder/
 *.mp4
 *.wav
 build/
+__pycache__/
