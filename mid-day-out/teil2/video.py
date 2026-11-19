@@ -18,38 +18,68 @@ S = "bilder/"
 # keys: (t, cx, cy, zoom, rot)   light: (t, lx, ly) in Bildkoordinaten 0..1
 SHOTS = [
     dict(f="TITLE", bars=4),
-    dict(f=S + "01_platine.jpg", bars=8, keys=[(0, .35, .45, 1.6, 0), (.5, .55, .40, 1.9, 0), (1, .70, .55, 2.3, 0)],
-         light=[(0, .2, .5), (.35, .5, .3), (.7, .7, .6), (1, .55, .45)], rad=.22),
-    dict(f=S + "02_schuhe_aufzug.jpg", bars=7, keys=[(0, .5, .40, 1.0, 0), (1, .47, .75, 1.3, 0)],
-         light=[(0, .5, .2), (.6, .45, .6), (1, .4, .75)], rad=.28, tr="pix"),
-    dict(f=S + "03_beine.jpg", bars=7, keys=[(0, .5, .75, 1.0, 0), (1, .52, .32, 1.35, 0)],
+    # --- dunkle Welt (Intro/Puls)
+    dict(f=S + "22_sperrbildschirm.png", bars=4, keys=[(0, .5, .62, 1.6, 0), (1, .5, .32, 1.3, 0)],
+         light=[(0, .5, .7), (1, .5, .25)], rad=.25, pixel=True),
+    dict(f=S + "19_nachtflug.jpg", bars=4, keys=[(0, .45, .35, 1.4, -6), (1, .5, .55, 1.7, 6)],
+         light=[(0, .3, .4), (1, .6, .55)], rad=.25),
+    dict(f=S + "01_platine.jpg", bars=4, keys=[(0, .35, .45, 1.6, 0), (1, .65, .50, 2.2, 0)],
+         light=[(0, .2, .5), (.5, .5, .3), (1, .65, .5)], rad=.22, tr="pix"),
+    dict(f=S + "18_apple_board.jpg", bars=4, keys=[(0, .30, .30, 1.8, 0), (1, .60, .55, 1.5, 0)],
+         light=[(0, .35, .3), (.5, .55, .35), (1, .6, .6)], rad=.24, tr="pix"),
+    dict(f=S + "02_schuhe_aufzug.jpg", bars=3, keys=[(0, .5, .40, 1.0, 0), (1, .47, .75, 1.3, 0)],
+         light=[(0, .5, .2), (1, .4, .75)], rad=.28),
+    dict(f=S + "03_beine.jpg", bars=3, keys=[(0, .5, .75, 1.0, 0), (1, .52, .32, 1.35, 0)],
          light=[(0, .6, .8), (1, .5, .35)], rad=.3),
-    dict(f=S + "04_aktie.png", bars=7, keys=[(0, .22, .47, 2.1, 0), (1, .78, .41, 2.1, 0)],
-         light=[(0, .3, .55), (.5, .5, .45), (1, .7, .4)], rad=.3, pixel=True, tr="pix"),
-    dict(f=S + "05_profile.jpg", bars=7, keys=[(0, .5, .5, 1.25, -10), (1, .5, .5, 1.7, 8)],
+    dict(f=S + "04_aktie.png", bars=3, keys=[(0, .22, .47, 2.1, 0), (1, .78, .41, 2.1, 0)],
+         light=[(0, .3, .55), (1, .7, .4)], rad=.3, pixel=True, tr="pix"),
+    dict(f=S + "05_profile.jpg", bars=3, keys=[(0, .5, .5, 1.25, -10), (1, .5, .5, 1.7, 8)],
          light=[(0, .15, .5), (1, .85, .5)], rad=.25),
-    dict(f=S + "06_bruecke.jpg", bars=8, keys=[(0, .45, .42, 1.0, 0), (.6, .55, .42, 1.5, 0), (1, .62, .45, 1.9, 0)],
-         light=[(0, .7, .45), (.5, .55, .45), (1, .5, .5)], rad=.28, tr="pix"),
-    dict(f=S + "07_turm_hecke.jpg", bars=8, keys=[(0, .55, .78, 1.0, 0), (1, .55, .30, 1.05, 0)],
-         light=[(0, .4, .8), (.5, .55, .5), (1, .55, .3)], rad=.32),
-    dict(f=S + "08_turm.jpg", bars=7, keys=[(0, .5, .65, 1.35, 0), (1, .5, .25, 1.0, 0)],
+    # --- Drive / Lead
+    dict(f=S + "06_bruecke.jpg", bars=4, keys=[(0, .45, .42, 1.0, 0), (1, .62, .45, 1.8, 0)],
+         light=[(0, .7, .45), (1, .5, .5)], rad=.28, tr="pix"),
+    dict(f=S + "07_turm_hecke.jpg", bars=4, keys=[(0, .55, .78, 1.0, 0), (1, .55, .30, 1.05, 0)],
+         light=[(0, .4, .8), (1, .55, .3)], rad=.32),
+    dict(f=S + "08_turm.jpg", bars=4, keys=[(0, .5, .65, 1.35, 0), (1, .5, .25, 1.0, 0)],
          light=[(0, .5, .7), (1, .5, .2)], rad=.33, tr="pix"),
-    dict(f=S + "09_kunst_blau.jpg", bars=8, keys=[(0, .53, .50, 1.7, 0), (1, .53, .45, 1.0, 0)],
-         light=[(0, .5, .5), (.5, .4, .45), (1, .55, .45)], rad=.3),
-    dict(f=S + "10_leuchtkaesten.jpg", bars=8, keys=[(0, .28, .47, 1.8, 0), (.5, .45, .42, 1.6, 0), (1, .73, .48, 1.8, 0)],
+    dict(f=S + "09_kunst_blau.jpg", bars=4, keys=[(0, .53, .50, 1.7, 0), (1, .53, .45, 1.0, 0)],
+         light=[(0, .5, .5), (1, .55, .45)], rad=.3),
+    dict(f=S + "10_leuchtkaesten.jpg", bars=4, keys=[(0, .28, .47, 1.8, 0), (1, .73, .48, 1.8, 0)],
          light=[(0, .5, .5), (1, .5, .5)], rad=.35, tr="pix"),
-    dict(f=S + "11_meer.jpg", bars=8, keys=[(0, .25, .50, 1.8, 0), (1, .75, .50, 1.8, 0)],
+    dict(f=S + "12_spiegelraum.jpg", bars=4, keys=[(0, .5, .5, 1.3, 0), (1, .5, .5, 1.7, 28)],
+         light=[(0, .5, .6), (1, .5, .5)], rad=.33),
+    # --- Breakdown: Licht im Dunkeln
+    dict(f=S + "11_meer.jpg", bars=4, keys=[(0, .25, .50, 1.8, 0), (1, .75, .50, 1.8, 0)],
          light=[(0, .3, .45), (1, .7, .45)], rad=.33),
-    dict(f=S + "12_spiegelraum.jpg", bars=8, keys=[(0, .5, .5, 1.3, 0), (1, .5, .5, 1.7, 28)],
-         light=[(0, .5, .6), (.5, .4, .4), (1, .5, .5)], rad=.33, tr="pix"),
-    dict(f=S + "13_galerie_mann.jpg", bars=7, keys=[(0, .5, .55, 1.0, 0), (1, .46, .43, 2.0, 0)],
-         light=[(0, .45, .45), (1, .5, .5)], rad=.36),
-    dict(f=S + "14_dachterrasse.jpg", bars=7, keys=[(0, .28, .70, 1.4, 0), (1, .55, .50, 1.0, 0)],
-         light=[(0, .3, .6), (1, .55, .5)], rad=.4, tr="pix"),
-    dict(f=S + "15_dom_nacht.jpg", bars=8, keys=[(0, .5, .70, 1.0, 0), (.5, .40, .50, 1.5, 0), (1, .32, .42, 2.2, 0)],
+    dict(f=S + "17_globus.jpg", bars=4, keys=[(0, .50, .45, 1.6, 0), (1, .45, .40, 1.15, -12)],
+         light=[(0, .5, .45), (1, .45, .4)], rad=.38),
+    # --- Aufbau
+    dict(f=S + "25_kirche.jpg", bars=4, keys=[(0, .45, .80, 1.3, 0), (1, .40, .55, 1.6, 0)],
+         light=[(0, .35, .8), (1, .3, .55)], rad=.3, tr="pix"),
+    dict(f=S + "24_wald.jpg", bars=4, keys=[(0, .35, .70, 1.0, 0), (1, .55, .45, 1.4, 0)],
+         light=[(0, .3, .7), (1, .6, .4)], rad=.33),
+    dict(f=S + "13_galerie_mann.jpg", bars=4, keys=[(0, .5, .55, 1.0, 0), (1, .46, .43, 2.0, 0)],
+         light=[(0, .45, .45), (1, .5, .5)], rad=.36, tr="pix"),
+    dict(f=S + "14_dachterrasse.jpg", bars=4, keys=[(0, .28, .70, 1.4, 0), (1, .55, .50, 1.0, 0)],
+         light=[(0, .3, .6), (1, .55, .5)], rad=.4),
+    # --- Hoehepunkt
+    dict(f=S + "15_dom_nacht.jpg", bars=4, keys=[(0, .5, .70, 1.0, 0), (1, .32, .42, 2.2, 0)],
          light=[(0, .5, .6), (1, .5, .45)], rad=.45),
-    dict(f=S + "16_selfie_nacht.jpg", bars=8, keys=[(0, .5, .45, 1.0, 0), (1, .5, .42, 1.2, 0)],
-         light=[(0, .5, .5), (1, .5, .5)], rad=.6),
+    dict(f=S + "16_selfie_nacht.jpg", bars=4, keys=[(0, .5, .45, 1.0, 0), (1, .5, .42, 1.2, 0)],
+         light=[(0, .5, .5), (1, .5, .5)], rad=.55, tr="pix"),
+    dict(f="FACES", faces=[S + "f1.jpg", S + "f2.jpg", S + "f3.jpg", S + "f4.jpg", S + "f5.jpg"], bars=8,
+         keys=[(0, .5, .45, 1.0, 0), (1, .5, .45, 1.25, 0)], light=[(0, .5, .45), (1, .5, .45)], rad=.6),
+    # --- Licht gefunden
+    dict(f=S + "21_flughafen.jpg", bars=6, keys=[(0, .45, .62, 1.0, 0), (1, .45, .42, 1.5, 0)],
+         light=[(0, .45, .45), (1, .45, .42)], rad=.55),
+    dict(f=S + "20_fluegel.jpg", bars=6, keys=[(0, .45, .60, 1.0, 0), (1, .55, .32, 1.4, 0)],
+         light=[(0, .4, .4), (1, .55, .35)], rad=.6),
+    dict(f=S + "23_berg.jpg", bars=5, keys=[(0, .5, .60, 1.0, 0), (1, .5, .40, 1.5, 0)],
+         light=[(0, .5, .4), (1, .5, .35)], rad=.65),
+    dict(f=S + "26_meer_sonne.jpg", bars=6, keys=[(0, .45, .60, 1.0, 0), (1, .35, .40, 1.5, 0)],
+         light=[(0, .35, .4), (1, .3, .38)], rad=.65),
+    dict(f=S + "27_aussicht.jpg", bars=6, keys=[(0, .5, .30, 1.4, 0), (1, .5, .60, 1.0, 0)],
+         light=[(0, .5, .4), (1, .5, .5)], rad=.75),
 ]
 start = 0
 for s in SHOTS:
@@ -213,7 +243,11 @@ def render(i):
         a += m[..., None] * 0.05 * np.array([0.6, 0.8, 1.0], np.float32)
         lightm = m
     else:
-        im = load(shot["f"])
+        if shot["f"] == "FACES":
+            seq = [0, 1, 2, 3, 4, 3, 2, 1]
+            im = load(shot["faces"][seq[(li // 15) % len(seq)]])   # Stop-Motion im Beat
+        else:
+            im = load(shot["f"])
         keys = shot["keys"]
         cx, cy, z, rot = (hermite(keys, t, j) for j in (1, 2, 3, 4))
         # sanftes Handkamera-Schweben
